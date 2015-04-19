@@ -19,5 +19,5 @@ def default_command(filename, delay=5):
             if not l.startswith('#'):
                 lines.append(l)
     for l in lines:
-        monitor.update(line)
+        monitor.update(l)
         time.sleep(delay)

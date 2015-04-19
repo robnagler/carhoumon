@@ -6,8 +6,18 @@
 """
 from __future__ import absolute_import, print_function
 
+import time
+
 from carhoumon import monitor
 
-def default_command(line):
-    """Passes line to update."""
-    monitor.update(line)
+def default_command(filename, delay=5):
+    """Passes lines to update every delay seconds."""
+    assert delay >= 1, 'delay must be at least one second'
+    lines = []
+    with open(filename, 'rb') as f:
+        for l in f:
+            if not l.startswith('#'):
+                lines.append(l)
+    for l in lines:
+        monitor.update(line)
+        time.sleep(delay)

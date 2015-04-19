@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>CarHouMon</title>
+</head>
+<body ng-app="CarHouMonApp">
+<div ng-controller="CarHouMonController">
+  <dl ng-repeat="(field, status) in levels">
+    <dt>{{field}}</dt><dd>{{status.is_on}} {{status.last_on}} {{status.last_off}}</dd>
+  </dl>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+<script src="/static/current_levels.js"></script>
+</body>

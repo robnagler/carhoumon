@@ -7,7 +7,7 @@
                 $http.get('/current_levels')
                     .success(function(data, status) {
                         $scope.levels = data;
-                        $log.log(data);
+                        // $log.log(data);
                         $timeout(current_levels, 5000);
                     })
                     .error(function(data, status) {
